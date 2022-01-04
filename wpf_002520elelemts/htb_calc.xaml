@@ -1,0 +1,268 @@
+<UserControl x:Class="SAP2012.Htb_Calc"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             ScrollViewer.CanContentScroll="true" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+             Height="461.243" Width="745.209">
+  <Grid Margin="5" Background="WhiteSmoke">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="2"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="2"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="2"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="2"/>
+    </Grid.RowDefinitions>
+    <Border Grid.Column="1" Grid.Row="1" BorderBrush="Gray" BorderThickness="1,1,1,1" CornerRadius="3"
+            VerticalAlignment="Top">
+      <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Name="stackPanel1" Margin="0,0,0,0" Grid.Column="1" Grid.Row="1">
+          <Expander Name="ExternalWallJunctions" Header="External Wall Junctions" Foreground="Black" IsExpanded="false"
+                    BorderBrush="White" BorderThickness="1">
+            <Grid Margin="5" Background="White" Column="1" Row="1">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="395*"/>
+                <ColumnDefinition Width="181*"/>
+                <ColumnDefinition Width="120"/>
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="305"/>
+                <RowDefinition Height="*"/>
+              </Grid.RowDefinitions>
+              <Border Background="#FF9FAC3E" Grid.ColumnSpan="4" ScrollViewer.CanContentScroll="true"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="0,0,0.2,0"/>
+              <TextBlock Text="External Wall Junctions" Foreground="White" VerticalAlignment="Center"
+                         HorizontalAlignment="Center" FontSize="18" Grid.Column="1" Margin="275.026,6.06,120.626,0"
+                         Grid.ColumnSpan="2"/>
+              <Button Name="cmdAddExternal" Grid.Column="3" Grid.Row="1" Content="Add" Margin="4.8,5,5.2,4.4"
+                      Cursor="Hand"/>
+              <ComboBox Name="cboExternal" Grid.Row="1" Margin="0.2,5,5.2,4.4" Cursor="Hand" SelectedIndex="0"
+                        Grid.Column="1" Grid.ColumnSpan="2">
+                <ComboBoxItem Content="Please Select..." Cursor="Hand"/>
+                <ComboBoxItem Content="E1:Steel lintel with perforated steel base plate" Cursor="Hand"/>
+                <ComboBoxItem Content="E2:Other lintels (including other steel lintels)" Cursor="Hand"/>
+                <ComboBoxItem Content="E3:Sill" Cursor="Hand"/>
+                <ComboBoxItem Content="E4:Jamb" Cursor="Hand"/>
+                <ComboBoxItem Content="E5:Ground floor (normal)" Cursor="Hand"/>
+                <ComboBoxItem Content="E19:Ground floor (inverted)" Cursor="Hand"/>
+                <ComboBoxItem Content="E20:Exposed floor (normal)" Cursor="Hand"/>
+                <ComboBoxItem Content="E21:Exposed floor (inverted)" Cursor="Hand"/>
+                <ComboBoxItem Content="E22:Basement floor" Cursor="Hand"/>
+                <ComboBoxItem Content="E6:Intermediate floor within a dwelling" Cursor="Hand"/>
+                <ComboBoxItem Content="E7:Party floor between dwellings (in blocks of flats)" Cursor="Hand"/>
+                <ComboBoxItem Content="E8:Balcony within a dwelling, wall insulation continuous" Cursor="Hand"/>
+                <ComboBoxItem Content="E9:Balcony between dwellings, wall insulation continuous" Cursor="Hand"/>
+                <ComboBoxItem Content="E23:Balcony within or between dwellings, balcony support penetrates wall insulation"
+                              Cursor="Hand"/>
+                <ComboBoxItem Content="E10:Eaves (insulation at ceiling level)" Cursor="Hand"/>
+                <ComboBoxItem Content="E24:Eaves (insulation at ceiling level - inverted)" Cursor="Hand"/>
+                <ComboBoxItem Content="E11:Eaves (insulation at rafter level)" Cursor="Hand"/>
+                <ComboBoxItem Content="E12:Gable (insulation at ceiling level)" Cursor="Hand"/>
+                <ComboBoxItem Content="E13:Gable (insulation at rafter level)" Cursor="Hand"/>
+                <ComboBoxItem Content="E14:Flat roof" Cursor="Hand"/>
+                <ComboBoxItem Content="E15:Flat roof with parapet" Cursor="Hand"/>
+                <ComboBoxItem Content="E16:Corner (normal)" Cursor="Hand"/>
+                <ComboBoxItem Content="E17:Corner (inverted internal area greater than external area)" Cursor="Hand"/>
+                <ComboBoxItem Content="E18:Party wall between dwellings" Cursor="Hand"/>
+                <ComboBoxItem Content="E25:Staggered party wall between dwellings" Cursor="Hand"/>
+              </ComboBox>
+              <Grid Row="2" ColumnSpan="3" Column="1">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="155*"/>
+                  <ColumnDefinition Width="80*"/>
+                  <ColumnDefinition Width="55*"/>
+                  <ColumnDefinition Width="80*"/>
+                  <ColumnDefinition Width="55*"/>
+                  <ColumnDefinition Width="90*"/>
+                  <ColumnDefinition Width="80*"/>
+                  <ColumnDefinition Width="80*"/>
+                  <ColumnDefinition Width="60*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Junction Type" Margin="2" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="Black"/>
+                <TextBlock Grid.Column="1" Text="Approved  (Ψ)" Margin="2" VerticalAlignment="Center"
+                           HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="7" Text="(Ψ x L)" Margin="2" VerticalAlignment="Center" HorizontalAlignment="Center"
+                           TextWrapping="Wrap" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="3" Text="Default  (Ψ)" Margin="2" VerticalAlignment="Center"
+                           HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="2" Text="Is Approved" Margin="2" VerticalAlignment="Center"
+                           HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="4" Text="Is Default" Margin="2" VerticalAlignment="Center"
+                           HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="5" Margin="2" Text="Linear Thermal Transmittance Used (Ψ)" TextWrapping="Wrap"
+                           HorizontalAlignment="Center" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="6" Margin="2" Text="Length of Junction Type (L)" TextWrapping="Wrap"
+                           HorizontalAlignment="Center" TextAlignment="Center" Foreground="Black"/>
+              </Grid>
+              <ScrollViewer Grid.Row="3" Grid.ColumnSpan="3" Grid.Column="1" VerticalScrollBarVisibility="Auto"
+                            RenderTransformOrigin="0.5,0.5">
+                <UIElement.RenderTransform>
+                  <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.255"/>
+                    <TranslateTransform/>
+                  </TransformGroup>
+                </UIElement.RenderTransform>
+                <StackPanel Name="stkExternal" Margin="2"/>
+              </ScrollViewer>
+            </Grid>
+            <Control.Background>
+              <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                <GradientStop Color="Gray" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+              </LinearGradientBrush>
+            </Control.Background>
+          </Expander>
+          <Expander Name="PartyWallJunctions" Header="Party Wall Junctions" Foreground="Black" IsExpanded="false"
+                    Margin="0,0,0.2,0" BorderBrush="White" BorderThickness="1">
+            <Control.Background>
+              <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                <GradientStop Color="Gray" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+              </LinearGradientBrush>
+            </Control.Background>
+            <Grid Margin="5" Background="White">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="734*"/>
+                <ColumnDefinition Width="120"/>
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="305"/>
+                <RowDefinition Height="*"/>
+              </Grid.RowDefinitions>
+              <Border Background="#FFEB8752" Grid.ColumnSpan="3" Grid.Row="0" Margin="0,0,0.2,0.4"/>
+              <TextBlock Text="Party Wall Junctions" Grid.ColumnSpan="3" Grid.Row="0" Foreground="White"
+                         VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
+              <Button x:Name="cmdAddParty" Grid.Column="2" Grid.Row="1" Content="Add" Margin="5" Cursor="Hand"/>
+              <ComboBox x:Name="cboParty" Grid.Row="1" Grid.Column="1" Margin="5" Cursor="Hand" SelectedIndex="0">
+                <ComboBoxItem Content="Please Select..." Cursor="Hand"/>
+                <ComboBoxItem Content="P1:Ground floor" Cursor="Hand"/>
+                <ComboBoxItem Content="P6:Ground floor (inverted)" Cursor="Hand"/>
+                <ComboBoxItem Content="P2:Intermediate floor within a dwelling" Cursor="Hand"/>
+                <ComboBoxItem Content="P3:Intermediate floor between dwellings (in blocks of flats)" Cursor="Hand"/>
+                <ComboBoxItem Content="P7:Exposed floor (normal)" Cursor="Hand"/>
+                <ComboBoxItem Content="P8:Exposed floor (inverted)" Cursor="Hand"/>
+                <ComboBoxItem Content="P4:Roof (insulation at ceiling level)" Cursor="Hand"/>
+                <ComboBoxItem Content="P5:Roof (insulation at rafter level)" Cursor="Hand"/>
+              </ComboBox>
+              <Grid Row="2" ColumnSpan="2" Column="1">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="155*"/>
+                  <ColumnDefinition Width="80*"/>
+                  <ColumnDefinition Width="55*"/>
+                  <ColumnDefinition Width="80*"/>
+                  <ColumnDefinition Width="55*"/>
+                  <ColumnDefinition Width="90*"/>
+                  <ColumnDefinition Width="80*"/>
+                  <ColumnDefinition Width="80*"/>
+                  <ColumnDefinition Width="60*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Junction Type" Margin="2" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="Black"/>
+                <TextBlock Grid.Column="1" Text="Approved  (Ψ)" Margin="2" VerticalAlignment="Center"
+                           HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="7" Text="(Ψ x L)" Margin="2" VerticalAlignment="Center" HorizontalAlignment="Center"
+                           TextWrapping="Wrap" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="3" Text="Default  (Ψ)" Margin="2" VerticalAlignment="Center"
+                           HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="2" Text="Is Approved" Margin="2" VerticalAlignment="Center"
+                           HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="4" Text="Is Default" Margin="2" VerticalAlignment="Center"
+                           HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="5" Margin="2" Text="Linear Thermal Transmittance Used (Ψ)" TextWrapping="Wrap"
+                           HorizontalAlignment="Center" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="6" Margin="2" Text="Length of Junction Type (L)" TextWrapping="Wrap"
+                           HorizontalAlignment="Center" TextAlignment="Center" Foreground="Black"/>
+              </Grid>
+              <ScrollViewer Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1" VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="stkParty" Margin="2"/>
+              </ScrollViewer>
+            </Grid>
+          </Expander>
+          <Expander Name="RooforWithaRoominRoofJunctions" Header="Roof or With a Room in Roof Junctions"
+                    Foreground="Black" IsExpanded="false" Margin="0,0,0.2,0" BorderBrush="Gray" BorderThickness="1">
+            <Control.Background>
+              <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                <GradientStop Color="Gray" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+              </LinearGradientBrush>
+            </Control.Background>
+            <Grid Margin="5" Background="White">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="734*"/>
+                <ColumnDefinition Width="120"/>
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="305"/>
+                <RowDefinition Height="*"/>
+              </Grid.RowDefinitions>
+              <Border Background="#FF569CD6" Grid.ColumnSpan="3" Grid.Row="0"/>
+              <TextBlock Text="Roof or With a Room in Roof Junctions" Grid.ColumnSpan="3" Grid.Row="0" Foreground="White"
+                         VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
+              <Button x:Name="cmdAddRoof" Grid.Column="2" Grid.Row="1" Content="Add" Margin="5" Cursor="Hand"/>
+              <ComboBox x:Name="cboRoof" Grid.Row="1" Grid.Column="1" Margin="5" Cursor="Hand" SelectedIndex="0">
+                <ComboBoxItem Content="Please Select..." Cursor="Hand"/>
+                <ComboBoxItem Content="R1:Head" Cursor="Hand"/>
+                <ComboBoxItem Content="R2:Sill" Cursor="Hand"/>
+                <ComboBoxItem Content="R3:Jamb" Cursor="Hand"/>
+                <ComboBoxItem Content="R4:Ridge (vaulted ceiling)" Cursor="Hand"/>
+                <ComboBoxItem Content="R5:Ridge (inverted)" Cursor="Hand"/>
+                <ComboBoxItem Content="R6:Flat ceiling" Cursor="Hand"/>
+                <ComboBoxItem Content="R7:Flat ceiling(inverted)" Cursor="Hand"/>
+                <ComboBoxItem Content="R8:Roof wall (rafter)" Cursor="Hand"/>
+                <ComboBoxItem Content="R9:Roof wall (flat ceiling)" Cursor="Hand"/>
+              </ComboBox>
+              <Grid Row="2" ColumnSpan="2" Column="1">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="155*"/>
+                  <ColumnDefinition Width="80*"/>
+                  <ColumnDefinition Width="55*"/>
+                  <ColumnDefinition Width="80*"/>
+                  <ColumnDefinition Width="55*"/>
+                  <ColumnDefinition Width="90*"/>
+                  <ColumnDefinition Width="80*"/>
+                  <ColumnDefinition Width="80*"/>
+                  <ColumnDefinition Width="60*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Junction Type" Margin="2" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="Black"/>
+                <TextBlock Grid.Column="1" Text="Approved  (Ψ)" Margin="2" VerticalAlignment="Center"
+                           HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="7" Text="(Ψ x L)" Margin="2" VerticalAlignment="Center" HorizontalAlignment="Center"
+                           TextWrapping="Wrap" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="3" Text="Default  (Ψ)" Margin="2" VerticalAlignment="Center"
+                           HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="2" Text="Is Approved" Margin="2" VerticalAlignment="Center"
+                           HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="4" Text="Is Default" Margin="2" VerticalAlignment="Center"
+                           HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="5" Margin="2" Text="Linear Thermal Transmittance Used (Ψ)" TextWrapping="Wrap"
+                           HorizontalAlignment="Center" TextAlignment="Center" Foreground="Black"/>
+                <TextBlock Grid.Column="6" Margin="2" Text="Length of Junction Type (L)" TextWrapping="Wrap"
+                           HorizontalAlignment="Center" TextAlignment="Center" Foreground="Black"/>
+              </Grid>
+              <ScrollViewer Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1" VerticalScrollBarVisibility="Auto"
+                            Margin="0,5,-4.8,0">
+                <StackPanel x:Name="stkRoof" Margin="2"/>
+              </ScrollViewer>
+            </Grid>
+          </Expander>
+        </StackPanel>
+      </ScrollViewer>
+    </Border>
+  </Grid>
+</UserControl>

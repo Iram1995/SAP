@@ -1,0 +1,45 @@
+<UserControl x:Class="SAP2012.Htb_Junction"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008">
+  <Grid Background="Gray">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="155*"/>
+      <ColumnDefinition Width="80*"/>
+      <ColumnDefinition Width="55*"/>
+      <ColumnDefinition Width="80*"/>
+      <ColumnDefinition Width="55*"/>
+      <ColumnDefinition Width="90*"/>
+      <ColumnDefinition Width="80*"/>
+      <ColumnDefinition Width="80*"/>
+      <ColumnDefinition Width="60*"/>
+      <ColumnDefinition Width="60*"/>
+    </Grid.ColumnDefinitions>
+    <TextBlock Name="txtDescription" Text="Description" Margin="2" VerticalAlignment="Center" TextWrapping="Wrap"
+               Foreground="White"/>
+    <TextBlock Name="txtAccredited" Grid.Column="1" Text="Accredited" Margin="2" VerticalAlignment="Center"
+               HorizontalAlignment="Center" TextWrapping="Wrap" Foreground="White"/>
+    <TextBlock Name="txtResult" Grid.Column="7" Text="Accredited" Margin="2" VerticalAlignment="Center"
+               HorizontalAlignment="Center" TextWrapping="Wrap" Foreground="White"/>
+    <TextBlock Name="txtDefault" Grid.Column="3" Text="Accredited" Margin="2" VerticalAlignment="Center"
+               HorizontalAlignment="Center" TextWrapping="Wrap" Foreground="White"/>
+    <CheckBox x:Name="IsAccredited" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+              Cursor="Hand"/>
+    <CheckBox x:Name="IsDefault" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center"
+              Cursor="Hand"/>
+    <TextBox Name="txtThermal" Grid.Column="5" Margin="2" Padding="1" TextAlignment="Right" Height="20"
+             VerticalAlignment="Center"/>
+    <TextBox Name="txtLength" Grid.Column="6" Margin="2" Padding="2" TextAlignment="Right" Height="20"
+             VerticalAlignment="Center"/>
+    <Button Name="cmdDelete" Grid.Column="8" Background="Transparent" Cursor="Hand" BorderBrush="Transparent">
+      <ContentControl.Content>
+        <Image Source="../Resources/redSmall.png" Height="20" Width="20"/>
+      </ContentControl.Content>
+    </Button>
+    <Button x:Name="ImportLen" Content="Import" HorizontalAlignment="Left" Margin="0,2.54,0,0"
+            VerticalAlignment="Top" Width="40.279" Grid.Column="9"
+            ToolTip="Please note: the inclusion of doors as windows in the Opening section will mean the sills should be deducted manually"
+            IsEnabled="false"/>
+  </Grid>
+</UserControl>
